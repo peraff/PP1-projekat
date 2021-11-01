@@ -1,0 +1,13 @@
+file mjparser1.cup: 
+
+1. za smenu program vidi dal moze onako indirektno pomocu dodatne smene ili bolje direktno ugraditi 
+2. za OptionSquares vidi dal moze tako ili direktno ugradi jednu smenu sa [] a drugu bez! 
+
+
+3. IZMENA U CUP SPECIFIKACIJI: 
+	-izbacena smena:
+	AdditionalExpr ::= (RelationExpr) RelOp Expression 
+				 | (OnlyExpression) /* epsilon */
+				 ;
+	-Umesto toga uvedena jedna dodatna smena za CondFact koja objedinjuje ove dve! Bilo je :
+	CondFact ::= (CondFact) Expression  AdditionalExpr;
